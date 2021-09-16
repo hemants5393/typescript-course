@@ -74,3 +74,16 @@
     };
     console.log("Person hobbies:", person.hobbies);
 })();
+/*
+    Tuple Types
+*/
+(function () {
+    var person = ["Hemant Singh", 29];
+    console.log("Person tuple:", person);
+    var employee = {
+        name: "Hemant Singh",
+        age: 29,
+        designation: [2, "Developer"]
+    };
+    console.log("Employee object designation tuple:", employee);
+})();
