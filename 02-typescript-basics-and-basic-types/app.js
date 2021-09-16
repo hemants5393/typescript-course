@@ -87,3 +87,41 @@
     };
     console.log("Employee object designation tuple:", employee);
 })();
+/*
+    Enum Types
+*/
+(function () {
+    var Designation;
+    (function (Designation) {
+        Designation[Designation["TESTER"] = 0] = "TESTER";
+        Designation[Designation["DEVOPS"] = 1] = "DEVOPS";
+        Designation[Designation["DEVELOPER"] = 2] = "DEVELOPER";
+    })(Designation || (Designation = {}));
+    var employee = {
+        name: "Hemant Singh",
+        age: 29,
+        designation: Designation.DEVELOPER
+    };
+    console.log("Employee object designation enum:", employee);
+    if (employee.designation === 2) {
+        console.log(employee.name, " is a Developer.");
+    }
+    // Initialized enum
+    var APIS;
+    (function (APIS) {
+        APIS["GET_POSTS"] = "version3/getPosts";
+        APIS["POST_POST"] = "version3/postPost";
+        APIS["DELETE_POST"] = "version3/deletePost";
+    })(APIS || (APIS = {}));
+    console.log("Get posts api:", APIS.GET_POSTS);
+    // Enum with both number and string values
+    var CRICKET;
+    (function (CRICKET) {
+        CRICKET[CRICKET["NO_PLAYERS"] = 11] = "NO_PLAYERS";
+        CRICKET["TEAM"] = "India";
+        CRICKET["CAPTAIN"] = "Virat Kohli";
+        CRICKET[CRICKET["ICC_TROPHIES"] = 3] = "ICC_TROPHIES";
+    })(CRICKET || (CRICKET = {}));
+    console.log("Cricket enum:", CRICKET);
+    console.log("Team", CRICKET.TEAM, "has", CRICKET.ICC_TROPHIES, "ICC trophies.");
+})();

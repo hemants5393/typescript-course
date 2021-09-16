@@ -110,3 +110,48 @@
   };
   console.log("Employee object designation tuple:", employee);
 })();
+
+/*
+    Enum Types
+*/
+(function () {
+  enum Designation {
+    TESTER,
+    DEVOPS,
+    DEVELOPER,
+  }
+
+  let employee = {
+    name: "Hemant Singh",
+    age: 29,
+    designation: Designation.DEVELOPER,
+  };
+  console.log("Employee object designation enum:", employee);
+  if (employee.designation === 2) {
+    console.log(employee.name, " is a Developer.");
+  }
+
+  // Initialized enum
+  enum APIS {
+    GET_POSTS = "version3/getPosts",
+    POST_POST = "version3/postPost",
+    DELETE_POST = "version3/deletePost",
+  }
+  console.log("Get posts api:", APIS.GET_POSTS);
+
+  // Enum with both number and string values
+  enum CRICKET {
+    NO_PLAYERS = 11,
+    TEAM = "India",
+    CAPTAIN = "Virat Kohli",
+    ICC_TROPHIES = 3,
+  }
+  console.log("Cricket enum:", CRICKET);
+  console.log(
+    "Team",
+    CRICKET.TEAM,
+    "has",
+    CRICKET.ICC_TROPHIES,
+    "ICC trophies."
+  );
+})();
