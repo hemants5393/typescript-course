@@ -60,3 +60,17 @@
     };
     console.log("Product nested object:", product);
 })();
+/*
+    Array Types
+*/
+(function () {
+    var sports;
+    sports = ["Cricket", "Football", "Hockey"];
+    console.log("Sports array:", sports);
+    var person = {
+        name: "Hemant Singh",
+        age: 29,
+        hobbies: ["Sports", "Video Games"]
+    };
+    console.log("Person hobbies:", person.hobbies);
+})();
