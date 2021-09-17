@@ -166,3 +166,15 @@
     easing = "ease-out";
     console.log("number literal type with interface:", player);
 })();
+/*
+    Type Aliases/ Custom types
+*/
+(function () {
+    var data = "A string value.";
+    console.log("simple type alias example:", data);
+    var user = {
+        name: "Hemant Singh",
+        age: 29
+    };
+    console.log("type of an object:", user);
+})();

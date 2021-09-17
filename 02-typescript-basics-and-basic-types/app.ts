@@ -210,3 +210,21 @@
   easing = "ease-out";
   console.log("number literal type with interface:", player);
 })();
+
+/*
+    Type Aliases/ Custom types
+*/
+(function () {
+  // Simple type alias
+  type Combinable = string | number;
+  let data: Combinable = "A string value.";
+  console.log("simple type alias example:", data);
+
+  // Type alias of an object
+  type User = { name: string; age: number };
+  let user: User = {
+    name: "Hemant Singh",
+    age: 29,
+  };
+  console.log("type of an object:", user);
+})();
