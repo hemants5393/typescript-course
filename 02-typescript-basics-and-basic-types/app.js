@@ -125,3 +125,11 @@
     console.log("Cricket enum:", CRICKET);
     console.log("Team", CRICKET.TEAM, "has", CRICKET.ICC_TROPHIES, "ICC trophies.");
 })();
+/*
+    "any"" Type
+*/
+(function () {
+    var data;
+    data = ["Cricket", 25];
+    console.log("data of any type:", data);
+})();
