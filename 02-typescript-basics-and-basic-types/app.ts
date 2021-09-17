@@ -175,3 +175,38 @@
   data = 30;
   console.log("data as union type of string and number:", data);
 })();
+
+/*
+    Literal Types
+*/
+(function () {
+  // Simple string literal type
+  let action: "come" | "go";
+  action = "come";
+  console.log("simple string literal type:", action);
+
+  // Another string literal type with custom type
+  type Easing = "ease-in" | "ease-out" | "ease-in-out";
+  let easing: Easing;
+  easing = "ease-out";
+  console.log("string literal type with custom type:", easing);
+
+  // Simple number literal type
+  let pointsScored: 5 | 10 | 15;
+  pointsScored = 5;
+  console.log("simple number literal type:", action);
+
+  // Another number literal type with interface
+  interface Player {
+    name: string;
+    health: number;
+    levels: 1 | 2 | 3;
+  }
+  let player: Player = {
+    name: "Harry Potter",
+    health: 95,
+    levels: 2,
+  };
+  easing = "ease-out";
+  console.log("number literal type with interface:", player);
+})();

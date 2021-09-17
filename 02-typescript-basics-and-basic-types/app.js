@@ -143,3 +143,26 @@
     data = 30;
     console.log("data as union type of string and number:", data);
 })();
+/*
+    Literal Types
+*/
+(function () {
+    // Simple string literal type
+    var action;
+    action = "come";
+    console.log("simple string literal type:", action);
+    var easing;
+    easing = "ease-out";
+    console.log("string literal type with custom type:", easing);
+    // Simple number literal type
+    var pointsScored;
+    pointsScored = 5;
+    console.log("simple number literal type:", action);
+    var player = {
+        name: "Harry Potter",
+        health: 95,
+        levels: 2
+    };
+    easing = "ease-out";
+    console.log("number literal type with interface:", player);
+})();
