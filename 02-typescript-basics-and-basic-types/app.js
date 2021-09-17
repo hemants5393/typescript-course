@@ -126,10 +126,20 @@
     console.log("Team", CRICKET.TEAM, "has", CRICKET.ICC_TROPHIES, "ICC trophies.");
 })();
 /*
-    "any"" Type
+    "any" Type
 */
 (function () {
     var data;
     data = ["Cricket", 25];
     console.log("data of any type:", data);
+})();
+/*
+    Union Types
+*/
+(function () {
+    var data;
+    data = "A string value.";
+    console.log("data as union type of string and number:", data);
+    data = 30;
+    console.log("data as union type of string and number:", data);
 })();

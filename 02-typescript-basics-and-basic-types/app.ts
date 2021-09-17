@@ -157,10 +157,21 @@
 })();
 
 /*
-    "any"" Type
+    "any" Type
 */
 (function () {
   let data: any[];
   data = ["Cricket", 25];
   console.log("data of any type:", data);
+})();
+
+/*
+    Union Types
+*/
+(function () {
+  let data: string | number;
+  data = "A string value.";
+  console.log("data as union type of string and number:", data);
+  data = 30;
+  console.log("data as union type of string and number:", data);
 })();
