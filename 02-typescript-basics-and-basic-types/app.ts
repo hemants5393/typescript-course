@@ -228,3 +228,24 @@
   };
   console.log("type of an object:", user);
 })();
+
+/*
+    Function return types and "void"
+*/
+(function () {
+  // Function with return type as number
+  function add(n1: number, n2: number): number {
+    return n1 + n2;
+  }
+  const number1 = 5;
+  const number2 = 15;
+  const result = add(number1, number2);
+  console.log("add() Result:", result);
+
+  // Function with void return type
+  function printMessage(message: string): void {
+    console.log("Message is: ", message);
+  }
+  let message = "Hello, how are you?";
+  printMessage(message);
+})();
