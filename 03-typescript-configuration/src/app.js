@@ -1,3 +1,4 @@
+"use strict";
 /*
     Using Types
 */
@@ -36,7 +37,7 @@
     // Object with inferred type
     var person = {
         name: "Hemant Singh",
-        age: 29
+        age: 29,
     };
     console.log("Person object:", person);
     console.log("Person name:", person.name);
@@ -44,7 +45,7 @@
     var player = {
         name: "Virat Kohli",
         type: "Batter",
-        age: 33
+        age: 33,
     };
     console.log("Player object:", player);
     console.log("Player name:", player.name);
@@ -55,8 +56,8 @@
         tags: ["great-offer", "hot-and-new"],
         details: {
             title: "Red Carpet",
-            description: "A great carpet - almost brand-new!"
-        }
+            description: "A great carpet - almost brand-new!",
+        },
     };
     console.log("Product nested object:", product);
 })();
@@ -70,7 +71,7 @@
     var person = {
         name: "Hemant Singh",
         age: 29,
-        hobbies: ["Sports", "Video Games"]
+        hobbies: ["Sports", "Video Games"],
     };
     console.log("Person hobbies:", person.hobbies);
 })();
@@ -83,7 +84,7 @@
     var employee = {
         name: "Hemant Singh",
         age: 29,
-        designation: [2, "Developer"]
+        designation: [2, "Developer"],
     };
     console.log("Employee object designation tuple:", employee);
 })();
@@ -100,7 +101,7 @@
     var employee = {
         name: "Hemant Singh",
         age: 29,
-        designation: Designation.DEVELOPER
+        designation: Designation.DEVELOPER,
     };
     console.log("Employee object designation enum:", employee);
     if (employee.designation === 2) {
@@ -161,7 +162,7 @@
     var player = {
         name: "Harry Potter",
         health: 95,
-        levels: 2
+        levels: 2,
     };
     easing = "ease-out";
     console.log("number literal type with interface:", player);
@@ -174,7 +175,7 @@
     console.log("simple type alias example:", data);
     var user = {
         name: "Hemant Singh",
-        age: 29
+        age: 29,
     };
     console.log("type of an object:", user);
 })();

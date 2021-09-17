@@ -1,4 +1,12 @@
 {
+  /* Add files to include for compilation */
+  "include": ["src/**/*.ts"],
+  /* Add files here to exclude from compilation. */
+  "exclude": [
+    "node_modules", // by default it is excluded, but still we are writing it here for learning purpose
+    "**/*.spec.ts",
+    "*.sample.ts"
+  ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
