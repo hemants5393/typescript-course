@@ -197,3 +197,26 @@
     var message = "Hello, how are you?";
     printMessage(message);
 })();
+/*
+    Functions as Types
+*/
+(function () {
+    // Function as Type
+    function greaterThan(n1, n2) {
+        return n1 > n2;
+    }
+    var number1 = 5;
+    var number2 = 15;
+    var greaterThanFun;
+    greaterThanFun = greaterThan; // storing the function with the same signature
+    console.log("greaterThanFun result:", greaterThanFun(number1, number2));
+    // Function type with callback
+    function addAndHandle(num1, num2, cb) {
+        var result = num1 + num2;
+        cb(result);
+    }
+    function printResult(result) {
+        console.log("Result: ", result);
+    }
+    addAndHandle(10, 20, printResult);
+})();

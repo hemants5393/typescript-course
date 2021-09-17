@@ -249,3 +249,32 @@
   let message = "Hello, how are you?";
   printMessage(message);
 })();
+
+/*
+    Functions as Types
+*/
+(function () {
+  // Function as Type
+  function greaterThan(n1: number, n2: number): boolean {
+    return n1 > n2;
+  }
+  const number1 = 5;
+  const number2 = 15;
+  let greaterThanFun: (num1: number, num2: number) => boolean;
+  greaterThanFun = greaterThan; // storing the function with the same signature
+  console.log("greaterThanFun result:", greaterThanFun(number1, number2));
+
+  // Function type with callback
+  function addAndHandle(
+    num1: number,
+    num2: number,
+    cb: (result: number) => void
+  ): void {
+    const result = num1 + num2;
+    cb(result);
+  }
+  function printResult(result: number): void {
+    console.log("Result: ", result);
+  }
+  addAndHandle(10, 20, printResult);
+})();
