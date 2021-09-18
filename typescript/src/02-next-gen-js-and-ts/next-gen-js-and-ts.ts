@@ -1,0 +1,1 @@
+console.log("Message from next-gen-js-and-ts file.")
