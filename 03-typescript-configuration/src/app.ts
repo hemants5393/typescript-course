@@ -26,6 +26,7 @@
     const result = n1 + n2;
     if (showResult) {
       console.log(resultPhrase, result);
+      return;
     } else {
       return result;
     }
@@ -194,7 +195,7 @@
   // Simple number literal type
   let pointsScored: 5 | 10 | 15;
   pointsScored = 5;
-  console.log("simple number literal type:", action);
+  console.log("simple number literal type:", pointsScored);
 
   // Another number literal type with interface
   interface Player {

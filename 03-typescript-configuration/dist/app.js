@@ -13,6 +13,7 @@
         const result = n1 + n2;
         if (showResult) {
             console.log(resultPhrase, result);
+            return;
         }
         else {
             return result;
@@ -124,7 +125,7 @@
     console.log("string literal type with custom type:", easing);
     let pointsScored;
     pointsScored = 5;
-    console.log("simple number literal type:", action);
+    console.log("simple number literal type:", pointsScored);
     let player = {
         name: "Harry Potter",
         health: 95,
