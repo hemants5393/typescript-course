@@ -175,3 +175,4 @@
     }
     addAndHandle(10, 20, printResult);
 })();
+//# sourceMappingURL=app.js.map
