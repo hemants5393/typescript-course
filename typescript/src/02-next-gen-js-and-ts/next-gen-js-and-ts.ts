@@ -91,3 +91,17 @@ console.log("******************02 next gen js and ts******************");
   const copyPerson = { ...person };
   console.log("copyPerson object with spread operator:", copyPerson);
 })();
+
+/*
+    Rest parameter
+*/
+(function () {
+  const add = (...numbers: number[]): number => {
+    let result = 0;
+    for (let num of numbers) {
+      result += num;
+    }
+    return result;
+  };
+  console.log("add result Rest parameter:", add(10, 20, 30));
+})();

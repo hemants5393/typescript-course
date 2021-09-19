@@ -58,4 +58,14 @@ console.log("******************02 next gen js and ts******************");
     const copyPerson = Object.assign({}, person);
     console.log("copyPerson object with spread operator:", copyPerson);
 })();
+(function () {
+    const add = (...numbers) => {
+        let result = 0;
+        for (let num of numbers) {
+            result += num;
+        }
+        return result;
+    };
+    console.log("add result Rest parameter:", add(10, 20, 30));
+})();
 //# sourceMappingURL=next-gen-js-and-ts.js.map
