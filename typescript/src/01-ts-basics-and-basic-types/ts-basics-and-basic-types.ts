@@ -1,3 +1,4 @@
+console.log("******************01 ts basics and basic types******************");
 /*
     Using Types
 */

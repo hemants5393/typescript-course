@@ -1,4 +1,5 @@
 "use strict";
+console.log("******************01 ts basics and basic types******************");
 (function () {
     function add(n1, n2) {
         return n1 + n2;
