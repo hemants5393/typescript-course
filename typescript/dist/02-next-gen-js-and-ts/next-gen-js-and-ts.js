@@ -68,4 +68,25 @@ console.log("******************02 next gen js and ts******************");
     };
     console.log("add result Rest parameter:", add(10, 20, 30));
 })();
+(function () {
+    const hobbies = ["Singing", "Sports", "Cooking", "Reading"];
+    const [hobbie1, hobbie2, ...remainingHobbies] = hobbies;
+    console.log("hobbie1:", hobbie1);
+    console.log("hobbie2:", hobbie2);
+    console.log("remainingHobbies:", remainingHobbies);
+    const person = {
+        name: "Hemant Singh",
+        age: 29,
+    };
+    const { name, age } = person;
+    console.log("name:", name);
+    console.log("age:", age);
+    const player = {
+        name: "Virat Kohli",
+        runs: 10000,
+    };
+    const { name: playerName, runs } = player;
+    console.log("playerName:", playerName);
+    console.log("runs:", runs);
+})();
 //# sourceMappingURL=next-gen-js-and-ts.js.map
