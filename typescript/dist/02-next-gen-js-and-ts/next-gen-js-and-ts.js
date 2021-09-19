@@ -32,4 +32,18 @@ console.log("******************02 next gen js and ts******************");
     const add = (a, b = 5) => a + b;
     console.log("add result with default function parameter:", add(10));
 })();
+(function () {
+    console.log("____________________");
+    function printAddress(street, streetTwo, state = "AZ") {
+        console.log("1st param:", street);
+        if (streetTwo) {
+            console.log("2nd param:", streetTwo);
+        }
+        console.log("3rd param (default/passed):", state);
+        console.log("____________________");
+    }
+    printAddress("123 Any St");
+    printAddress("123 Any St", "Suite 540");
+    printAddress("123 Any St", "Suite 540", "UT");
+})();
 //# sourceMappingURL=next-gen-js-and-ts.js.map

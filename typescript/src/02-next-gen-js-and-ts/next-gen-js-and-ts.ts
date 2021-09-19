@@ -48,9 +48,27 @@ console.log("******************02 next gen js and ts******************");
 })();
 
 /*
-    Defualt unction parameters
+    Default function parameters
 */
 (function () {
   const add = (a: number, b: number = 5): number => a + b;
   console.log("add result with default function parameter:", add(10));
+})();
+
+/*
+    Optional function parameters
+*/
+(function () {
+  console.log("____________________");
+  function printAddress(street: string, streetTwo?: string, state = "AZ") {
+    console.log("1st param:", street);
+    if (streetTwo) {
+      console.log("2nd param:", streetTwo);
+    }
+    console.log("3rd param (default/passed):", state);
+    console.log("____________________");
+  }
+  printAddress("123 Any St");
+  printAddress("123 Any St", "Suite 540");
+  printAddress("123 Any St", "Suite 540", "UT");
 })();
