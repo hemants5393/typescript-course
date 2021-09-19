@@ -13,4 +13,19 @@ console.log("******************02 next gen js and ts******************");
         console.log("Variable declared with let available only inside this block:", y);
     }
 })();
+(function () {
+    const add = (a, b) => a + b;
+    console.log("add result:", add(10, 20));
+    const calculate = (a, b) => {
+        const fixed = 100;
+        let result;
+        result = a + b;
+        return result * fixed;
+    };
+    console.log("calculate result:", calculate(10, 20));
+    const printMessage = (msg) => {
+        console.log("Message is: ", msg);
+    };
+    printMessage("Hello world!");
+})();
 //# sourceMappingURL=next-gen-js-and-ts.js.map
