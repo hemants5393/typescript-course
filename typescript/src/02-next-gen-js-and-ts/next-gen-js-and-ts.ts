@@ -31,7 +31,7 @@ console.log("******************02 next gen js and ts******************");
   const add = (a: number, b: number): number => a + b;
   console.log("add result:", add(10, 20));
 
-  // Example-1
+  // Example-2
   const calculate = (a: number, b: number): number => {
     const fixed = 100;
     let result: number;
@@ -45,4 +45,12 @@ console.log("******************02 next gen js and ts******************");
     console.log("Message is: ", msg);
   };
   printMessage("Hello world!");
+})();
+
+/*
+    Defualt unction parameters
+*/
+(function () {
+  const add = (a: number, b: number = 5): number => a + b;
+  console.log("add result with default function parameter:", add(10));
 })();

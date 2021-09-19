@@ -28,4 +28,8 @@ console.log("******************02 next gen js and ts******************");
     };
     printMessage("Hello world!");
 })();
+(function () {
+    const add = (a, b = 5) => a + b;
+    console.log("add result with default function parameter:", add(10));
+})();
 //# sourceMappingURL=next-gen-js-and-ts.js.map
