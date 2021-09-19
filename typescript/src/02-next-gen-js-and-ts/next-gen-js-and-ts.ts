@@ -72,3 +72,22 @@ console.log("******************02 next gen js and ts******************");
   printAddress("123 Any St", "Suite 540");
   printAddress("123 Any St", "Suite 540", "UT");
 })();
+
+/*
+    The Spread operator
+*/
+(function () {
+  // Example-1 (create or merge arrays or objects)
+  const oldHobbies = ["Singing", "Sports"];
+  const activeHobbies = ["Cooking", "Reading"];
+  const allHobies = [...oldHobbies, ...activeHobbies];
+  console.log("allHobies with spread operator:", allHobies);
+
+  // Example-2 (create a copy of objects or arrays)
+  const person = {
+    name: "Hemant Singh",
+    age: 29,
+  };
+  const copyPerson = { ...person };
+  console.log("copyPerson object with spread operator:", copyPerson);
+})();

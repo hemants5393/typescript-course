@@ -46,4 +46,16 @@ console.log("******************02 next gen js and ts******************");
     printAddress("123 Any St", "Suite 540");
     printAddress("123 Any St", "Suite 540", "UT");
 })();
+(function () {
+    const oldHobbies = ["Singing", "Sports"];
+    const activeHobbies = ["Cooking", "Reading"];
+    const allHobies = [...oldHobbies, ...activeHobbies];
+    console.log("allHobies with spread operator:", allHobies);
+    const person = {
+        name: "Hemant Singh",
+        age: 29,
+    };
+    const copyPerson = Object.assign({}, person);
+    console.log("copyPerson object with spread operator:", copyPerson);
+})();
 //# sourceMappingURL=next-gen-js-and-ts.js.map
