@@ -89,4 +89,8 @@ console.log("******************02 next gen js and ts******************");
     console.log("playerName:", playerName);
     console.log("runs:", runs);
 })();
+(function () {
+    const employess = 50;
+    console.log(`The company is having ${employess} number of employees.`);
+})();
 //# sourceMappingURL=next-gen-js-and-ts.js.map
