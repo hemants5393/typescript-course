@@ -129,3 +129,59 @@ console.log("******************03 classes and interfaces******************");
   emp.employeeInfo();
   console.log("Employee code outside class:", emp.empCode); // readonly accessible outside class
 })();
+
+/*
+    Inheritance and Overriding
+*/
+(function () {
+  class Report {
+    public companyNamename: string;
+    constructor(name: string) {
+      this.companyNamename = name;
+    }
+
+    protected printSomething(): void {
+      console.log("Something in class Report.");
+    }
+  }
+
+  class Invoice extends Report {
+    constructor(public name: string, public total: number) {
+      super(name);
+    }
+    public getInvoice(): any {
+      return this.name + ", " + this.total;
+    }
+    public printSomething(): void {
+      // Overriding "printSomething" method in base class
+      console.log("Something in class Invoice.");
+    }
+  }
+
+  class BillOfLading extends Report {
+    constructor(
+      public name: string,
+      public city: string,
+      public state: string
+    ) {
+      super(name);
+    }
+    public getBol(): any {
+      return this.name + ", " + this.city + ", " + this.state;
+    }
+    public printSomething(): void {
+      // Overriding "printSomething" method in base class but still calling it for use
+      super.printSomething();
+    }
+  }
+
+  const invoice = new Invoice("Google", 200);
+  console.log("invoice getInvoice::", invoice.getInvoice());
+  console.log("invoice companyNamename::", invoice.companyNamename);
+  invoice.printSomething();
+
+  const bol = new BillOfLading("Microsoft", "Scottsdale", "AZ");
+  console.log("bol printBol::", bol.getBol());
+  console.log("bol companyNamename::", bol.companyNamename);
+  bol.printSomething();
+})();

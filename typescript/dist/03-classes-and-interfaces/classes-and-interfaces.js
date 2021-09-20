@@ -88,4 +88,49 @@ console.log("******************03 classes and interfaces******************");
     emp.employeeInfo();
     console.log("Employee code outside class:", emp.empCode);
 })();
+(function () {
+    class Report {
+        constructor(name) {
+            this.companyNamename = name;
+        }
+        printSomething() {
+            console.log("Something in class Report.");
+        }
+    }
+    class Invoice extends Report {
+        constructor(name, total) {
+            super(name);
+            this.name = name;
+            this.total = total;
+        }
+        getInvoice() {
+            return this.name + ", " + this.total;
+        }
+        printSomething() {
+            console.log("Something in class Invoice.");
+        }
+    }
+    class BillOfLading extends Report {
+        constructor(name, city, state) {
+            super(name);
+            this.name = name;
+            this.city = city;
+            this.state = state;
+        }
+        getBol() {
+            return this.name + ", " + this.city + ", " + this.state;
+        }
+        printSomething() {
+            super.printSomething();
+        }
+    }
+    const invoice = new Invoice("Google", 200);
+    console.log("invoice getInvoice::", invoice.getInvoice());
+    console.log("invoice companyNamename::", invoice.companyNamename);
+    invoice.printSomething();
+    const bol = new BillOfLading("Microsoft", "Scottsdale", "AZ");
+    console.log("bol printBol::", bol.getBol());
+    console.log("bol companyNamename::", bol.companyNamename);
+    bol.printSomething();
+})();
 //# sourceMappingURL=classes-and-interfaces.js.map
