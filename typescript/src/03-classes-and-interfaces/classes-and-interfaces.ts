@@ -321,3 +321,43 @@ console.log("******************03 classes and interfaces******************");
   console.log(john.compensationStatement());
   console.log(jane.compensationStatement());
 })();
+
+/*
+    Singleton and Private constructors
+*/
+(function () {
+  class AccountingDepartment {
+    private lastReport: string = "default";
+    private static instance: AccountingDepartment;
+    private constructor() {}
+
+    get mostRecentReport() {
+      if (this.lastReport) {
+        return this.lastReport;
+      }
+      throw new Error("No report found.");
+    }
+
+    set mostRecentReport(value: string) {
+      if (!value) {
+        throw new Error("Please pass in a valid value.");
+      }
+      this.lastReport = value;
+    }
+
+    static getInstance() {
+      if (this.instance) {
+        return this.instance;
+      }
+      this.instance = new AccountingDepartment();
+      return this.instance;
+    }
+  }
+
+  const accDept = AccountingDepartment.getInstance();
+  accDept.mostRecentReport = "July Report";
+  console.log("Last report:", accDept.mostRecentReport);
+  // const other = new AccountingDepartment(); // Error
+  accDept.mostRecentReport = "August Report";
+  console.log("Last report:", accDept.mostRecentReport);
+})();

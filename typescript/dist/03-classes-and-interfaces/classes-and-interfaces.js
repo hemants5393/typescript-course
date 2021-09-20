@@ -228,4 +228,35 @@ console.log("******************03 classes and interfaces******************");
     console.log(john.compensationStatement());
     console.log(jane.compensationStatement());
 })();
+(function () {
+    class AccountingDepartment {
+        constructor() {
+            this.lastReport = "default";
+        }
+        get mostRecentReport() {
+            if (this.lastReport) {
+                return this.lastReport;
+            }
+            throw new Error("No report found.");
+        }
+        set mostRecentReport(value) {
+            if (!value) {
+                throw new Error("Please pass in a valid value.");
+            }
+            this.lastReport = value;
+        }
+        static getInstance() {
+            if (this.instance) {
+                return this.instance;
+            }
+            this.instance = new AccountingDepartment();
+            return this.instance;
+        }
+    }
+    const accDept = AccountingDepartment.getInstance();
+    accDept.mostRecentReport = "July Report";
+    console.log("Last report:", accDept.mostRecentReport);
+    accDept.mostRecentReport = "August Report";
+    console.log("Last report:", accDept.mostRecentReport);
+})();
 //# sourceMappingURL=classes-and-interfaces.js.map
