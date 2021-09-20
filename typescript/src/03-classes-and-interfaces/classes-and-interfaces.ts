@@ -104,3 +104,28 @@ console.log("******************03 classes and interfaces******************");
     // empObj.empCode; // Error (protected cannot be accessed outside class)
   })();
 })();
+
+/*
+    "readonly" properties
+*/
+(function () {
+  class Employee {
+    readonly empCode: number;
+    empName: string;
+
+    constructor(code: number, name: string) {
+      this.empCode = code;
+      this.empName = name;
+    }
+    public employeeInfo(): void {
+      // this.empCode = 50; // Error (can't change readonly property)
+      console.log("Employee code:", this.empCode);
+      console.log("Employee name:", this.empName);
+    }
+  }
+  let emp = new Employee(10, "John");
+  // emp.empCode = 20; // Error (can't change readonly property)
+  emp.empName = "Bill";
+  emp.employeeInfo();
+  console.log("Employee code outside class:", emp.empCode); // readonly accessible outside class
+})();

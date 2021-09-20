@@ -72,4 +72,20 @@ console.log("******************03 classes and interfaces******************");
         console.log("empObj:", empObj);
     })();
 })();
+(function () {
+    class Employee {
+        constructor(code, name) {
+            this.empCode = code;
+            this.empName = name;
+        }
+        employeeInfo() {
+            console.log("Employee code:", this.empCode);
+            console.log("Employee name:", this.empName);
+        }
+    }
+    let emp = new Employee(10, "John");
+    emp.empName = "Bill";
+    emp.employeeInfo();
+    console.log("Employee code outside class:", emp.empCode);
+})();
 //# sourceMappingURL=classes-and-interfaces.js.map
