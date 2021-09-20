@@ -185,3 +185,39 @@ console.log("******************03 classes and interfaces******************");
   console.log("bol companyNamename::", bol.companyNamename);
   bol.printSomething();
 })();
+
+/*
+    Setters and Getters
+*/
+(function () {
+  class Person {
+    private _age = 20; // default value
+    private firstName: string;
+    private lastName: string;
+
+    constructor(fName: string, lName: string) {
+      this.firstName = fName;
+      this.lastName = lName;
+    }
+
+    public get age() {
+      return this._age;
+    }
+
+    public set age(value: number) {
+      if (value <= 0 || value >= 200) {
+        throw new Error("The age is invalid");
+      }
+      this._age = value;
+    }
+
+    public getFullName(): string {
+      return `${this.firstName} ${this.lastName}`;
+    }
+  }
+  const person = new Person("Hemant", "Singh");
+  console.log("person full name:", person.getFullName());
+  console.log("person default age:", person.age);
+  person.age = 29;
+  console.log("person age after setter:", person.age);
+})();

@@ -133,4 +133,30 @@ console.log("******************03 classes and interfaces******************");
     console.log("bol companyNamename::", bol.companyNamename);
     bol.printSomething();
 })();
+(function () {
+    class Person {
+        constructor(fName, lName) {
+            this._age = 20;
+            this.firstName = fName;
+            this.lastName = lName;
+        }
+        get age() {
+            return this._age;
+        }
+        set age(value) {
+            if (value <= 0 || value >= 200) {
+                throw new Error("The age is invalid");
+            }
+            this._age = value;
+        }
+        getFullName() {
+            return `${this.firstName} ${this.lastName}`;
+        }
+    }
+    const person = new Person("Hemant", "Singh");
+    console.log("person full name:", person.getFullName());
+    console.log("person default age:", person.age);
+    person.age = 29;
+    console.log("person age after setter:", person.age);
+})();
 //# sourceMappingURL=classes-and-interfaces.js.map
