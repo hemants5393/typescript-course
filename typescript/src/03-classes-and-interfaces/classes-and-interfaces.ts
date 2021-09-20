@@ -221,3 +221,32 @@ console.log("******************03 classes and interfaces******************");
   person.age = 29;
   console.log("person age after setter:", person.age);
 })();
+
+/*
+    Static methods and properties
+*/
+(function () {
+  class Employee {
+    private static headcount: number = 0;
+    private firstName: string;
+    private lastName: string;
+    private jobTitle: string;
+
+    constructor(firstName: string, lastName: string, jobTitle: string) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.jobTitle = jobTitle;
+      Employee.headcount++;
+    }
+
+    public static getHeadcount() {
+      return Employee.headcount;
+    }
+  }
+
+  let john = new Employee("John", "Doe", "Front-end Developer");
+  let jane = new Employee("Jane", "Doe", "Back-end Developer");
+  let joanna = new Employee("Joanna", "Doe", "Tester");
+
+  console.log("headcount:", Employee.getHeadcount()); // 3
+})();

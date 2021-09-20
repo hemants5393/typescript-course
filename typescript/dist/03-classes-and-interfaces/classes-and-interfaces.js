@@ -159,4 +159,22 @@ console.log("******************03 classes and interfaces******************");
     person.age = 29;
     console.log("person age after setter:", person.age);
 })();
+(function () {
+    class Employee {
+        constructor(firstName, lastName, jobTitle) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.jobTitle = jobTitle;
+            Employee.headcount++;
+        }
+        static getHeadcount() {
+            return Employee.headcount;
+        }
+    }
+    Employee.headcount = 0;
+    let john = new Employee("John", "Doe", "Front-end Developer");
+    let jane = new Employee("Jane", "Doe", "Back-end Developer");
+    let joanna = new Employee("Joanna", "Doe", "Tester");
+    console.log("headcount:", Employee.getHeadcount());
+})();
 //# sourceMappingURL=classes-and-interfaces.js.map
