@@ -250,3 +250,25 @@ console.log("******************03 classes and interfaces******************");
 
   console.log("headcount:", Employee.getHeadcount()); // 3
 })();
+
+/*
+    Short syntax for intialization in class constructor
+*/
+(function () {
+  class Employee {
+    constructor(
+      private firstName: string,
+      private lastName: string,
+      private jobTitle: string
+    ) {}
+
+    public printEmployeeInfo() {
+      console.log(
+        `Name: ${this.firstName} ${this.lastName}, Job Title: ${this.jobTitle}`
+      );
+    }
+  }
+
+  let john = new Employee("John", "Doe", "Front-end Developer");
+  john.printEmployeeInfo();
+})();

@@ -177,4 +177,18 @@ console.log("******************03 classes and interfaces******************");
     let joanna = new Employee("Joanna", "Doe", "Tester");
     console.log("headcount:", Employee.getHeadcount());
 })();
+(function () {
+    class Employee {
+        constructor(firstName, lastName, jobTitle) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.jobTitle = jobTitle;
+        }
+        printEmployeeInfo() {
+            console.log(`Name: ${this.firstName} ${this.lastName}, Job Title: ${this.jobTitle}`);
+        }
+    }
+    let john = new Employee("John", "Doe", "Front-end Developer");
+    john.printEmployeeInfo();
+})();
 //# sourceMappingURL=classes-and-interfaces.js.map
