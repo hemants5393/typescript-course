@@ -464,3 +464,20 @@ console.log("******************03 classes and interfaces******************");
   let user: Greetable = new Person("Hemant Singh");
   user.greet("Good morning");
 })();
+
+/*
+    Interfaces as function types
+*/
+(function () {
+  interface StringFormat {
+    (str: string, isUpper: boolean): string;
+  }
+
+  let format: StringFormat;
+
+  format = function (str: string, isUpper: boolean): string {
+    return isUpper ? str.toLocaleUpperCase() : str.toLocaleLowerCase();
+  };
+
+  console.log(format("hello world", true));
+})();

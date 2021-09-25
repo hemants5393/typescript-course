@@ -309,4 +309,11 @@ console.log("******************03 classes and interfaces******************");
     let user = new Person("Hemant Singh");
     user.greet("Good morning");
 })();
+(function () {
+    let format;
+    format = function (str, isUpper) {
+        return isUpper ? str.toLocaleUpperCase() : str.toLocaleLowerCase();
+    };
+    console.log(format("hello world", true));
+})();
 //# sourceMappingURL=classes-and-interfaces.js.map
