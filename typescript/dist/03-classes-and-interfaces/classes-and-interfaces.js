@@ -270,4 +270,17 @@ console.log("******************03 classes and interfaces******************");
     };
     user.greet("Good morning");
 })();
+(function () {
+    class Person {
+        constructor(n) {
+            this.age = 29;
+            this.name = n;
+        }
+        greet(phrase) {
+            console.log(`${phrase} ${this.name}`);
+        }
+    }
+    let user = new Person("Hemant Singh");
+    user.greet("Good morning");
+})();
 //# sourceMappingURL=classes-and-interfaces.js.map

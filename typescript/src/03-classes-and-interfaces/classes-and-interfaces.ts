@@ -382,3 +382,29 @@ console.log("******************03 classes and interfaces******************");
   }; 
   user.greet("Good morning");
 })();
+
+/*
+    Using intrerfaces with classes
+*/
+(function () {
+  interface Greetable {
+    name: string;
+    greet(phrase: string): void;
+  }
+
+  class Person implements Greetable{
+    name: string;
+    age = 29
+
+    constructor(n: string) {
+      this.name = n;
+    }
+
+    greet(phrase: string): void {
+      console.log(`${phrase} ${this.name}`);
+    }
+  }
+
+  let user: Greetable = new Person("Hemant Singh");
+  user.greet("Good morning");
+})();
