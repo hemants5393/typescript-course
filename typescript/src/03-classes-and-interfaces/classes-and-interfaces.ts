@@ -481,3 +481,25 @@ console.log("******************03 classes and interfaces******************");
 
   console.log(format("hello world", true));
 })();
+
+/*
+    Optional parameters and properties
+*/
+(function () {
+  // age and printName are optional here
+  interface Person {
+    name: string;
+    age?: number;
+    greet(phrase: string): void;
+    printName?(): void;
+  }
+
+  let user: Person;
+  user = {
+    name: "Hemant Singh",
+    greet(phrase) {
+      console.log(`${phrase} ${this.name}`);
+    },
+  }; 
+  user.greet("Good morning");
+})();

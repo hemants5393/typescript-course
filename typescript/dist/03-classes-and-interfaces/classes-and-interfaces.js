@@ -316,4 +316,14 @@ console.log("******************03 classes and interfaces******************");
     };
     console.log(format("hello world", true));
 })();
+(function () {
+    let user;
+    user = {
+        name: "Hemant Singh",
+        greet(phrase) {
+            console.log(`${phrase} ${this.name}`);
+        },
+    };
+    user.greet("Good morning");
+})();
 //# sourceMappingURL=classes-and-interfaces.js.map
