@@ -361,3 +361,24 @@ console.log("******************03 classes and interfaces******************");
   accDept.mostRecentReport = "August Report";
   console.log("Last report:", accDept.mostRecentReport);
 })();
+
+/*
+    A simple interface
+*/
+(function () {
+  interface Person {
+    name: string;
+    age: number;
+    greet(phrase: string): void;
+  }
+
+  let user: Person;
+  user = {
+    name: "Hemant Singh",
+    age: 29,
+    greet(phrase) {
+      console.log(`${phrase} ${this.name}`);
+    },
+  }; 
+  user.greet("Good morning");
+})();

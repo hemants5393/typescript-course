@@ -259,4 +259,15 @@ console.log("******************03 classes and interfaces******************");
     accDept.mostRecentReport = "August Report";
     console.log("Last report:", accDept.mostRecentReport);
 })();
+(function () {
+    let user;
+    user = {
+        name: "Hemant Singh",
+        age: 29,
+        greet(phrase) {
+            console.log(`${phrase} ${this.name}`);
+        },
+    };
+    user.greet("Good morning");
+})();
 //# sourceMappingURL=classes-and-interfaces.js.map
