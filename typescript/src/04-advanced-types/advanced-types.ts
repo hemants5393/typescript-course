@@ -144,7 +144,7 @@ console.log("******************04 advanced types******************");
     public logName(fname: string): void;
     public logName(fname: string, lname: string): void;
     public logName(fname: string, lname?: string): void {
-      if(lname) {
+      if (lname) {
         console.log("Full name:", fname, lname);
       } else {
         console.log("First name:", fname);
@@ -154,4 +154,25 @@ console.log("******************04 advanced types******************");
   const logger = new Logger();
   logger.logName("Hemant");
   logger.logName("Hemant", "Singh");
+})();
+
+/*
+    Optional Chaining
+*/
+(function () {
+  interface JobData {
+    title: string;
+    description: string;
+  }
+  interface FetchUserData  {
+    name: string;
+    id: string;
+    job?: JobData;
+  }
+  const fetchUserData: FetchUserData  = {
+    name: "John Doe",
+    id: "123456",
+  };
+  const fetchUserDataJobDescription = fetchUserData?.job?.description;
+  console.log("fetchUserDataJobDescription:", fetchUserDataJobDescription);
 })();
