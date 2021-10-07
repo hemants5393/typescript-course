@@ -93,4 +93,14 @@ console.log("******************04 advanced types******************");
     const fetchUserDataJobDescription = (_a = fetchUserData === null || fetchUserData === void 0 ? void 0 : fetchUserData.job) === null || _a === void 0 ? void 0 : _a.description;
     console.log("fetchUserDataJobDescription:", fetchUserDataJobDescription);
 })();
+(function () {
+    const a = null !== null && null !== void 0 ? null : "default string";
+    const b = "" !== null && "" !== void 0 ? "" : "default string";
+    console.log("a:", a);
+    console.log("b:", b);
+    const c = undefined !== null && undefined !== void 0 ? undefined : 100;
+    const d = 0 !== null && 0 !== void 0 ? 0 : 100;
+    console.log("c:", c);
+    console.log("d:", d);
+})();
 //# sourceMappingURL=advanced-types.js.map

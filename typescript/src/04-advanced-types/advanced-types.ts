@@ -164,15 +164,30 @@ console.log("******************04 advanced types******************");
     title: string;
     description: string;
   }
-  interface FetchUserData  {
+  interface FetchUserData {
     name: string;
     id: string;
     job?: JobData;
   }
-  const fetchUserData: FetchUserData  = {
+  const fetchUserData: FetchUserData = {
     name: "John Doe",
     id: "123456",
   };
   const fetchUserDataJobDescription = fetchUserData?.job?.description;
   console.log("fetchUserDataJobDescription:", fetchUserDataJobDescription);
+})();
+
+/*
+    Nullish Coalescing
+*/
+(function () {
+  const a = null ?? "default string";
+  const b = "" ?? "default string";
+  console.log("a:", a);
+  console.log("b:", b);
+
+  const c = undefined ?? 100;
+  const d = 0 ?? 100;
+  console.log("c:", c);
+  console.log("d:", d);
 })();
