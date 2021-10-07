@@ -37,3 +37,44 @@ console.log("******************04 advanced types******************");
   };
   console.log("Customer:", c);
 })();
+
+/*
+    Type Guards
+*/
+(function () {
+  // typeof
+  type alphanumeric = string | number;
+  function add(a: alphanumeric, b: alphanumeric) {
+    if (typeof a === "number" && typeof b === "number") {
+      return a + b;
+    }
+
+    if (typeof a === "string" && typeof b === "string") {
+      return a.concat(b);
+    }
+
+    throw new Error(
+      "Invalid arguments. Both arguments must be either numbers or strings."
+    );
+  }
+  console.log("typeof result:", add("Hemant", "Singh"));
+
+  // instanceof
+  class Customer {
+    name: string;
+    constructor(n: string) {
+      this.name = n;
+    }
+  }
+  const c: Customer = new Customer("John Doe");
+  console.log("instanceof:", c instanceof Customer);
+
+  // in
+  const obj = {
+    value: 50,
+    index: 1,
+  };
+  if ("value" in obj) {
+    console.log("'value' is present in object 'obj'");
+  }
+})();

@@ -15,4 +15,30 @@ console.log("******************04 advanced types******************");
     };
     console.log("Customer:", c);
 })();
+(function () {
+    function add(a, b) {
+        if (typeof a === "number" && typeof b === "number") {
+            return a + b;
+        }
+        if (typeof a === "string" && typeof b === "string") {
+            return a.concat(b);
+        }
+        throw new Error("Invalid arguments. Both arguments must be either numbers or strings.");
+    }
+    console.log("typeof result:", add("Hemant", "Singh"));
+    class Customer {
+        constructor(n) {
+            this.name = n;
+        }
+    }
+    const c = new Customer("John Doe");
+    console.log("instanceof:", c instanceof Customer);
+    const obj = {
+        value: 50,
+        index: 1,
+    };
+    if ("value" in obj) {
+        console.log("'value' is present in object 'obj'");
+    }
+})();
 //# sourceMappingURL=advanced-types.js.map
