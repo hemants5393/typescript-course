@@ -78,3 +78,25 @@ console.log("******************04 advanced types******************");
     console.log("'value' is present in object 'obj'");
   }
 })();
+
+/*
+    Discriminated Unions
+*/
+(function () {
+  interface Duck {
+    type: "water";
+    swimming: boolean;
+  }
+  interface Parrot {
+    type: "air";
+    fly: boolean;
+  }
+  let bird: Duck | Parrot;
+  bird = {
+    type: "water",
+    swimming: true,
+  };
+  if(bird.type === "water"){
+    console.log("It is a duck.");
+  }
+})();

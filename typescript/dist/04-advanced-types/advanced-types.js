@@ -41,4 +41,14 @@ console.log("******************04 advanced types******************");
         console.log("'value' is present in object 'obj'");
     }
 })();
+(function () {
+    let bird;
+    bird = {
+        type: "water",
+        swimming: true,
+    };
+    if (bird.type === "water") {
+        console.log("It is a duck.");
+    }
+})();
 //# sourceMappingURL=advanced-types.js.map
