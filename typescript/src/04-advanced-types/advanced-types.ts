@@ -96,7 +96,18 @@ console.log("******************04 advanced types******************");
     type: "water",
     swimming: true,
   };
-  if(bird.type === "water"){
+  if (bird.type === "water") {
     console.log("It is a duck.");
   }
+})();
+
+/*
+    Type Casting
+*/
+(function () {
+  // Method-1: Using "as"
+  let input1 = document.querySelector('input[type="text"]') as HTMLInputElement;
+
+  // Method-2: Using "<>" operator
+  let input2 = <HTMLInputElement>document.querySelector('input[type="text"]');
 })();

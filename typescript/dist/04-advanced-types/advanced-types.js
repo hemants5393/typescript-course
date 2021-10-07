@@ -51,4 +51,8 @@ console.log("******************04 advanced types******************");
         console.log("It is a duck.");
     }
 })();
+(function () {
+    let input1 = document.querySelector('input[type="text"]');
+    let input2 = document.querySelector('input[type="text"]');
+})();
 //# sourceMappingURL=advanced-types.js.map
