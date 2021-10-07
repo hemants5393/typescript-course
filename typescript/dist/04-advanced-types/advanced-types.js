@@ -55,4 +55,33 @@ console.log("******************04 advanced types******************");
     let input1 = document.querySelector('input[type="text"]');
     let input2 = document.querySelector('input[type="text"]');
 })();
+(function () {
+    function add(a, b) {
+        return a + b;
+    }
+    console.log("add(5,5):", add(5, 5));
+    console.log("add('John','Doe'):", add("John", "Doe"));
+    console.log("add('5',5):", add("5", 5));
+    console.log("add(5,'5'):", add(5, "5"));
+    function sum(a, b, c) {
+        if (c)
+            return a + b + c;
+        return a + b;
+    }
+    console.log("sum(5,10):", sum(5, 10));
+    console.log("sum(5,10,15):", sum(5, 10, 15));
+    class Logger {
+        logName(fname, lname) {
+            if (lname) {
+                console.log("Full name:", fname, lname);
+            }
+            else {
+                console.log("First name:", fname);
+            }
+        }
+    }
+    const logger = new Logger();
+    logger.logName("Hemant");
+    logger.logName("Hemant", "Singh");
+})();
 //# sourceMappingURL=advanced-types.js.map
