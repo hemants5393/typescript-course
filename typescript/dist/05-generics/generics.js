@@ -33,4 +33,33 @@ console.log("******************05 generics******************");
     let str = prop({ name: "John Doe" }, "name");
     console.log("str:", str);
 })();
+(function () {
+    class DataStorage {
+        constructor() {
+            this.data = [];
+        }
+        addItem(item) {
+            this.data.push(item);
+        }
+        removeItem(item) {
+            const index = this.data.indexOf(item);
+            if (index !== -1) {
+                this.data.splice(index, 1);
+            }
+        }
+        getItems() {
+            return [...this.data];
+        }
+    }
+    const textStorage = new DataStorage();
+    textStorage.addItem("Max");
+    textStorage.addItem("John");
+    textStorage.addItem("Lucy");
+    console.log("textStorage items:", textStorage.getItems());
+    const numberStorage = new DataStorage();
+    numberStorage.addItem(10);
+    numberStorage.addItem(30);
+    numberStorage.addItem(90);
+    console.log("numberStorage items:", numberStorage.getItems());
+})();
 //# sourceMappingURL=generics.js.map

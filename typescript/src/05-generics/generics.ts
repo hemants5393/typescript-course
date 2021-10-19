@@ -59,3 +59,39 @@ console.log("******************05 generics******************");
   let str = prop({ name: "John Doe" }, "name");
   console.log("str:", str);
 })();
+
+/*
+    Generic classes
+*/
+(function () {
+  class DataStorage<T extends string | number | boolean> {
+    private data: Array<T> = [];
+
+    addItem(item: T) {
+      this.data.push(item);
+    }
+
+    removeItem(item: T) {
+      const index = this.data.indexOf(item);
+      if (index !== -1) {
+        this.data.splice(index, 1);
+      }
+    }
+
+    getItems() {
+      return [...this.data];
+    }
+  }
+
+  const textStorage = new DataStorage<string>();
+  textStorage.addItem("Max");
+  textStorage.addItem("John");
+  textStorage.addItem("Lucy");
+  console.log("textStorage items:", textStorage.getItems());
+
+  const numberStorage = new DataStorage<number>();
+  numberStorage.addItem(10);
+  numberStorage.addItem(30);
+  numberStorage.addItem(90);
+  console.log("numberStorage items:", numberStorage.getItems());
+})();
