@@ -19,4 +19,11 @@ console.log("******************05 generics******************");
     console.log("result:", result);
     console.log("result property:", result.name);
 })();
+(function () {
+    function merge(obj1, obj2) {
+        return Object.assign(Object.assign({}, obj1), obj2);
+    }
+    let result = merge({ name: "John" }, { jobTitle: "Frontend Developer" });
+    console.log("result:", result);
+})();
 //# sourceMappingURL=generics.js.map

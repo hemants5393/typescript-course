@@ -33,3 +33,18 @@ console.log("******************05 generics******************");
   // Property can also be referred on result if use generic function
   console.log("result property:", result.name);
 })();
+
+/*
+    Generic contraints
+*/
+(function () {
+  // We will have to pass object only now but it can be of any structure
+  function merge<U extends object, V extends object>(obj1: U, obj2: V) {
+    return {
+      ...obj1,
+      ...obj2,
+    };
+  }
+  let result = merge({ name: "John" }, { jobTitle: "Frontend Developer" });
+  console.log("result:", result);
+})();
