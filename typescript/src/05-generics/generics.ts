@@ -16,3 +16,20 @@ console.log("******************05 generics******************");
     console.log("Last name:", names[1]);
   });
 })();
+
+/*
+    Creating a generic function
+*/
+(function () {
+  function merge<U, V>(obj1: U, obj2: V) {
+    return {
+      ...obj1,
+      ...obj2,
+    };
+  }
+  let result = merge({ name: "John" }, { jobTitle: "Frontend Developer" });
+  console.log("result:", result);
+
+  // Property can also be referred on result if use generic function
+  console.log("result property:", result.name);
+})();

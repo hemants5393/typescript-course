@@ -11,4 +11,12 @@ console.log("******************05 generics******************");
         console.log("Last name:", names[1]);
     });
 })();
+(function () {
+    function merge(obj1, obj2) {
+        return Object.assign(Object.assign({}, obj1), obj2);
+    }
+    let result = merge({ name: "John" }, { jobTitle: "Frontend Developer" });
+    console.log("result:", result);
+    console.log("result property:", result.name);
+})();
 //# sourceMappingURL=generics.js.map
