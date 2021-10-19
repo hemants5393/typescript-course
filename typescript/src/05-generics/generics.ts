@@ -48,3 +48,14 @@ console.log("******************05 generics******************");
   let result = merge({ name: "John" }, { jobTitle: "Frontend Developer" });
   console.log("result:", result);
 })();
+
+/*
+    The "keyof" constraint
+*/
+(function () {
+  function prop<T, K extends keyof T>(obj: T, key: K) {
+    return obj[key];
+  }
+  let str = prop({ name: "John Doe" }, "name");
+  console.log("str:", str);
+})();

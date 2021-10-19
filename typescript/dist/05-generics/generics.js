@@ -26,4 +26,11 @@ console.log("******************05 generics******************");
     let result = merge({ name: "John" }, { jobTitle: "Frontend Developer" });
     console.log("result:", result);
 })();
+(function () {
+    function prop(obj, key) {
+        return obj[key];
+    }
+    let str = prop({ name: "John Doe" }, "name");
+    console.log("str:", str);
+})();
 //# sourceMappingURL=generics.js.map
