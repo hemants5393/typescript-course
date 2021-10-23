@@ -62,4 +62,33 @@ console.log("******************05 generics******************");
     numberStorage.addItem(90);
     console.log("numberStorage items:", numberStorage.getItems());
 })();
+(function () {
+    let month = {
+        key: "Jan",
+        value: 1,
+    };
+    console.log("month:", month);
+    class List {
+        constructor() {
+            this.items = [];
+        }
+        add(o) {
+            this.items.push(o);
+        }
+        remove(o) {
+            let index = this.items.indexOf(o);
+            if (index > -1) {
+                this.items.splice(index, 1);
+            }
+        }
+        printList() {
+            console.log("list:", this.items);
+        }
+    }
+    let list = new List();
+    for (let i = 0; i < 10; i++) {
+        list.add(i);
+    }
+    list.printList();
+})();
 //# sourceMappingURL=generics.js.map
