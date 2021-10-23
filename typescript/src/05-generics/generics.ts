@@ -139,3 +139,37 @@ console.log("******************05 generics******************");
   }
   list.printList();
 })();
+
+/*
+    Generic Utility types
+*/
+(function () {
+  // Partial generic type
+  interface CourseGoal {
+    title: string;
+    description: string;
+    completeUntil: Date;
+  }
+  function createCourseGoal(
+    title: string,
+    description: string,
+    date: Date
+  ): CourseGoal {
+    let courseGoal: Partial<CourseGoal> = {};
+    courseGoal.title = title;
+    courseGoal.description = description;
+    courseGoal.completeUntil = date;
+    return courseGoal as CourseGoal;
+  }
+  const courseGoal = createCourseGoal("Angular 11", "Frontend", new Date());
+  console.log("courseGoal:", courseGoal);
+
+  // Readonly generic type
+  const names: Readonly<string[]> = ["Ana", "Max"];
+  // names.push("Tom"); // It will throw error
+
+  const action: Readonly<object> = {
+    walk: true,
+  };
+  // action.walk = false; // It will throw error
+})();

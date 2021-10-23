@@ -91,4 +91,19 @@ console.log("******************05 generics******************");
     }
     list.printList();
 })();
+(function () {
+    function createCourseGoal(title, description, date) {
+        let courseGoal = {};
+        courseGoal.title = title;
+        courseGoal.description = description;
+        courseGoal.completeUntil = date;
+        return courseGoal;
+    }
+    const courseGoal = createCourseGoal("Angular 11", "Frontend", new Date());
+    console.log("courseGoal:", courseGoal);
+    const names = ["Ana", "Max"];
+    const action = {
+        walk: true,
+    };
+})();
 //# sourceMappingURL=generics.js.map
