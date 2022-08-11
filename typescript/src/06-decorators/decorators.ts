@@ -65,3 +65,32 @@ console.log("******************06 decorators******************");
     }
   }
 })();
+
+/*
+    Adding multiple decorators
+*/
+(function () {
+  function Logger1() {
+    console.log("Logger1 decorator created.");
+    return function (constructor: Function) {
+      console.log("Logger1 decorator executed.");
+    };
+  }
+
+  function Logger2() {
+    console.log("Logger2 decorator created.");
+    return function (constructor: Function) {
+      console.log("Logger2 decorator executed.");
+    };
+  }
+
+  @Logger1()
+  @Logger2()
+  class Person {
+    name = "Hemant";
+
+    construtor() {
+      console.log("Creating a new person object.");
+    }
+  }
+})();

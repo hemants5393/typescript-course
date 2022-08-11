@@ -67,4 +67,30 @@ console.log("******************06 decorators******************");
         WithTemplate("<h1>My Person Object </h1>", "app-decorators-1")
     ], Person);
 })();
+(function () {
+    function Logger1() {
+        console.log("Logger1 decorator created.");
+        return function (constructor) {
+            console.log("Logger1 decorator executed.");
+        };
+    }
+    function Logger2() {
+        console.log("Logger2 decorator created.");
+        return function (constructor) {
+            console.log("Logger2 decorator executed.");
+        };
+    }
+    let Person = class Person {
+        constructor() {
+            this.name = "Hemant";
+        }
+        construtor() {
+            console.log("Creating a new person object.");
+        }
+    };
+    Person = __decorate([
+        Logger1(),
+        Logger2()
+    ], Person);
+})();
 //# sourceMappingURL=decorators.js.map
