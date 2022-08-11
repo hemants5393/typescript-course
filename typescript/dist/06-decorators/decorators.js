@@ -42,4 +42,29 @@ console.log("******************06 decorators******************");
         Logger("LOGGING - PERSON")
     ], Person);
 })();
+(function () {
+    function WithTemplate(template, hookId) {
+        return function (constructor) {
+            const hookElement = document.getElementById(hookId);
+            const person = new constructor();
+            if (hookElement) {
+                hookElement.innerHTML = template;
+                const nameElement = document.createElement("h2");
+                nameElement.innerHTML = person.name;
+                hookElement.append(nameElement);
+            }
+        };
+    }
+    let Person = class Person {
+        constructor() {
+            this.name = "Hemant";
+        }
+        construtor() {
+            console.log("Creating a new person object.");
+        }
+    };
+    Person = __decorate([
+        WithTemplate("<h1>My Person Object </h1>", "app-decorators-1")
+    ], Person);
+})();
 //# sourceMappingURL=decorators.js.map

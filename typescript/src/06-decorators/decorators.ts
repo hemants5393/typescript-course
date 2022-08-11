@@ -38,3 +38,30 @@ console.log("******************06 decorators******************");
     }
   }
 })();
+
+/*
+    Building more useful decorators
+*/
+(function () {
+  function WithTemplate(template: string, hookId: string) {
+    return function (constructor: any) {
+      const hookElement = document.getElementById(hookId);
+      const person = new constructor();
+      if (hookElement) {
+        hookElement.innerHTML = template;
+        const nameElement = document.createElement("h2");
+        nameElement.innerHTML = person.name;
+        hookElement.append(nameElement);
+      }
+    };
+  }
+
+  @WithTemplate("<h1>My Person Object </h1>", "app-decorators-1")
+  class Person {
+    name = "Hemant";
+
+    construtor() {
+      console.log("Creating a new person object.");
+    }
+  }
+})();
