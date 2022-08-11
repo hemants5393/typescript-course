@@ -113,3 +113,75 @@ console.log("******************06 decorators******************");
     }
   }
 })();
+
+/*
+    Property, Accessor, Method and Parameter decorators
+*/
+(function () {
+  function LoggerProperty(target: any, propertyName: string | Symbol) {
+    console.log("LoggerProperty target:", target);
+    console.log("LoggerProperty propertyName:", propertyName);
+  }
+
+  function LoggerAccessor(
+    target: any,
+    accessorName: string | Symbol,
+    descriptor: PropertyDescriptor
+  ) {
+    console.log("LoggerAccessor target:", target);
+    console.log("LoggerAccessor accessorName:", accessorName);
+    console.log("LoggerAccessor descriptor:", descriptor);
+  }
+
+  function LoggerMethod(
+    target: any,
+    methodName: string | Symbol,
+    descriptor: PropertyDescriptor
+  ) {
+    console.log("LoggerMethod target:", target);
+    console.log("LoggerMethod methodName:", methodName);
+    console.log("LoggerMethod descriptor:", descriptor);
+  }
+
+  function LoggerParamter(
+    target: any,
+    parameterName: string | Symbol,
+    position: number
+  ) {
+    console.log("LoggerParamter target:", target);
+    console.log("LoggerParamter parameterName:", parameterName);
+    console.log("LoggerParamter position:", position);
+  }
+
+  class Person {
+    @LoggerProperty
+    name = "Hemant";
+
+    private _age!: number;
+
+    @LoggerAccessor
+    set age(val: number) {
+      if (val > 0) {
+        this._age = val;
+      } else {
+        throw new Error("Not a valid age!");
+      }
+    }
+
+    construtor(n: string, a: number) {
+      this.name = n;
+      this._age = a;
+      console.log("Creating a new person object.");
+    }
+
+    @LoggerMethod
+    printAge(
+      @LoggerParamter message1: string,
+      @LoggerParamter message2: string
+    ) {
+      console.log("Message1:", message1);
+      console.log("Message2:", message2);
+      console.log("Age of", this.name, "is:", this.age);
+    }
+  }
+})();
