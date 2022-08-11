@@ -94,3 +94,22 @@ console.log("******************06 decorators******************");
     }
   }
 })();
+
+/*
+    Property decorators
+*/
+(function () {
+  function Logger(target: any, propertyName: string | Symbol) {
+    console.log("Logger target:", target);
+    console.log("Logger propertyName:", propertyName);
+  }
+
+  class Person {
+    @Logger
+    name = "Hemant";
+
+    construtor() {
+      console.log("Creating a new person object.");
+    }
+  }
+})();

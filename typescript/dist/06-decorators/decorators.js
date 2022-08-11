@@ -93,4 +93,21 @@ console.log("******************06 decorators******************");
         Logger2()
     ], Person);
 })();
+(function () {
+    function Logger(target, propertyName) {
+        console.log("Logger target:", target);
+        console.log("Logger propertyName:", propertyName);
+    }
+    class Person {
+        constructor() {
+            this.name = "Hemant";
+        }
+        construtor() {
+            console.log("Creating a new person object.");
+        }
+    }
+    __decorate([
+        Logger
+    ], Person.prototype, "name", void 0);
+})();
 //# sourceMappingURL=decorators.js.map
